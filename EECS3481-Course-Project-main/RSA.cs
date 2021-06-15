@@ -15,16 +15,7 @@ namespace RSA
             public BigInteger n;
             public BigInteger phi;
 
-        // static BigInteger modulInv ( BigInteger a, BigInteger m) {
-        //     a = a % m;
-        //     for (int i = 1; i < m; i++) {
-        //     if ((a * i) % m == 1) {
-        //         return i;
-        //     }
-        // }
-        // return 1;
 
-        // }
         public int gcdExtended(BigInteger a, BigInteger b, BigInteger x, BigInteger y) {
                     // Base Case
                     if (a == (BigInteger) 0)
@@ -100,26 +91,7 @@ namespace RSA
                 }
                 ciphertext[i] = res;
             }
-            // string stringPlainText = "";
-            // for (int i  = 0; i < ciphertext.Length; i++) {
-            //      //Console.WriteLine ("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&   "+ciphertext[0]+ciphertext[1]+ciphertext[2]+ciphertext[3]+ciphertext[4]);
-            //     if (ciphertext[i] < 10 ) {
-            //         stringPlainText = stringPlainText +"000" + ciphertext[i].ToString();
-            //     }else if (ciphertext[i] < 100 ) {
-            //         stringPlainText = stringPlainText +"00" + ciphertext[i].ToString();
-            //     }else if (ciphertext[i] < 1000 ) {
-            //         stringPlainText = stringPlainText +"0" + ciphertext[i].ToString();
-            //     }
-            //     else {
-            //     stringPlainText = stringPlainText + ciphertext[i].ToString();
-            //     }
 
-            // }
-
-            // Encoding utf8 = Encoding.UTF8;
-
-            // byte [] ciphertextString = new byte [ciphertext.Length];
-            // ciphertextString = Encoding.ASCII.GetBytes(stringPlainText);
             List<Byte> cipher = new List<byte>();
             int longestPart = ciphertext[0].ToByteArray().Length;
             for (int i = 0; i < ciphertext.Length; i++)
@@ -151,11 +123,10 @@ namespace RSA
 
         }
         public byte[] decrypt (byte[] holderforbytes, BigInteger D, BigInteger N) {
-            //Console.WriteLine ("$$$$$$$$$$$$$$$$$$$$$"+holderforbytes[0]+holderforbytes[1]+holderforbytes[2]+holderforbytes[3]+holderforbytes[4]);
+            
 
-            // BigInteger[] ciphertext = new BigInteger[holderforbytes.Length];
+         
             List<BigInteger> ciphertext = new List<BigInteger>();
-            // BigInteger ciphertexthold;
             int longestPart = (int)(holderforbytes[holderforbytes.Length - 1]);
 
             for (int i = 0; i < holderforbytes.Length -1; i += longestPart)
@@ -192,22 +163,7 @@ namespace RSA
                 bigPlainText[i] = res;
             }
 
-            // for (int i = 0; i < bigPlainText.Length; i++) {
-
-            //     if (bigPlainText[i] < 10 ) {
-            //         stringPlainText = stringPlainText +"0" + bigPlainText[i].ToString();
-
-            //     }
-            //     else {
-            //     stringPlainText = stringPlainText + bigPlainText[i].ToString();
-            //     }
-            //  //Console.WriteLine (stringPlainText);
-            // }
-            //Console.WriteLine(stringPlainText);
-
-
-            // Encoding utf8 = Encoding.UTF8;
-            // plaintext = Encoding.ASCII.GetBytes(stringPlainText);
+            
             List<Byte> plaintext1 = new List<Byte>();
             for (int i = 0; i < bigPlainText.Length; i ++)
             {
