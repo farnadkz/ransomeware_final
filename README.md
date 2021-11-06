@@ -88,11 +88,5 @@ and lines (114-123):
                 
   The creation of the file will always occur since it uses a path that it knows will always exist. 
 
-As for the AES: 
-           
-           I (Mykola) made a mistake in  their description so: 
 
-AES/CTR: ProcessFile
-
-AES3481: encryption, decrytion
                         
